@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#050816"><meta name="description" content="ETERNAL — Cosmic Awakening. Собирай героев, развивай команду и покоряй звёздные миры."><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/pwa-icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="assets/pwa-icon.svg"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><title>ETERNAL — Cosmic Awakening 1.2</title>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#050816"><meta name="description" content="ETERNAL — Cosmic Awakening. Собирай героев, развивай команду и покоряй звёздные миры."><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/pwa-icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="assets/pwa-icon.svg"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><title>ETERNAL — Collector Universe 1.4</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Nunito:wght@500;600;700;800;900&family=Oxanium:wght@500;600;700;800&display=swap');
@@ -139,7 +139,36 @@ button{touch-action:manipulation;}
 .install-app{border:1px solid #83cfff88;background:linear-gradient(135deg,#17365a,#25204d);color:#e7f5ff;border-radius:10px;padding:7px 10px;font-weight:800;font-size:12px;cursor:pointer;box-shadow:0 0 18px #5cbcff22}.install-app[hidden]{display:none}
 .pwa-update{position:fixed;z-index:1000;left:12px;right:12px;bottom:calc(82px + env(safe-area-inset-bottom));max-width:520px;margin:auto;padding:12px 14px;border:1px solid #83cfff88;border-radius:14px;background:#101d31;color:#eef7ff;box-shadow:0 12px 35px #0009;display:flex;align-items:center;justify-content:space-between;gap:12px}.pwa-update button{border:0;border-radius:9px;padding:8px 12px;background:#8bd8ff;color:#081323;font-weight:900}
 @media(max-width:520px){.top{align-items:flex-start}.wallets{flex-wrap:wrap;justify-content:flex-end}.install-app{order:2}}
-</style></head><body><div class="app">
+
+/* ETERNAL 1.4 — bespoke visual language: Astral Obsidian */
+:root{--bg:#050713;--panel:#0b1224;--panel2:#101d35;--panel3:#172746;--text:#edf5ff;--muted:#91a8c7;--accent:#61d9ff;--accent2:#b59aff;--line:#28466a;--gold:#f5d58a;--green:#8ff0cf;--violet:#b59aff;--shadow:0 18px 60px #000b}
+html,body{background-color:#050713}
+body{font-family:"Trebuchet MS",system-ui,sans-serif;letter-spacing:.025em;background:radial-gradient(ellipse at 50% -15%,#1b4b70 0,transparent 40%),radial-gradient(ellipse at 100% 42%,#35245b55,transparent 38%),radial-gradient(ellipse at 0% 90%,#123d4b44,transparent 35%),#050713}
+h1,h2,h3,.brand,.panel h2,.hero h1{font-family:"Palatino Linotype",Georgia,serif;letter-spacing:.075em;text-transform:uppercase}
+.brand{font-weight:900;letter-spacing:.18em;text-shadow:0 0 18px #58dfff88,0 0 38px #a88cff55}
+.brand span{color:#8fe8ff}
+.panel,.card,.wallet,.nav,.bottom-nav{border-color:#315579!important;box-shadow:0 12px 34px #0007,inset 0 1px #b8e9ff0c}
+.panel{background:linear-gradient(145deg,#111d33ed,#080f20f5)!important}
+.card{background:linear-gradient(145deg,#142746,#0a1428)!important}
+.wallet{background:linear-gradient(145deg,#152c49,#0a1427)!important;color:#b9eaff}
+button,.btn{transition:transform .18s ease,filter .18s ease,box-shadow .18s ease}
+button:active,.btn:active{transform:scale(.97)}
+button.primary,.btn.primary{background:linear-gradient(110deg,#176b91,#6e52a8)!important;border:1px solid #8de5ff!important;box-shadow:0 0 22px #4bcaff38}
+.nav button,.tab{letter-spacing:.09em}
+.art img,.hero-art img{filter:drop-shadow(0 8px 20px #64dfff44)}
+@keyframes astralPulse{0%,100%{box-shadow:0 0 16px #56d8ff22}50%{box-shadow:0 0 30px #a88cff44}}
+.hero,.panel:first-child{animation:astralPulse 5s ease-in-out infinite}
+.footer{color:#7595b8;letter-spacing:.22em}
+.launcher{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:22px;background:radial-gradient(ellipse at 50% 38%,#193e66dd 0,transparent 48%),linear-gradient(145deg,#030611f7,#080d20f5 55%,#160f2df7);backdrop-filter:blur(18px)}
+.launcher.hidden{display:none}
+.launch-card{width:min(520px,100%);text-align:center;padding:36px 24px;border:1px solid #4b83a9;border-radius:28px;background:linear-gradient(145deg,#11213beF,#090f21f5);box-shadow:0 25px 100px #000c,0 0 45px #43caff22}
+.launch-logo{font:900 clamp(38px,10vw,62px)/1 Georgia,serif;letter-spacing:.2em;color:#e7f8ff;text-shadow:0 0 24px #5bdcff,0 0 48px #a78bff}
+.launch-sub{margin:16px 0 28px;color:#9cb9d9;letter-spacing:.28em;font-size:11px;text-transform:uppercase}
+.launch-play{width:100%;padding:16px;border-radius:16px;border:1px solid #9beaff;background:linear-gradient(100deg,#126b91,#7152a8);color:white;font-weight:900;letter-spacing:.2em;font-size:16px;box-shadow:0 0 30px #4bcaff55}
+.launch-notes{margin-top:20px;color:#819cbb;font-size:12px;line-height:1.8}
+
+</style></head><body>
+<div class="launcher" id="launcher"><div class="launch-card"><div class="launch-logo">ETERNAL</div><div class="launch-sub">Collector Universe · Starbound</div><button class="launch-play" id="launchPlay">ВОЙТИ В МИР</button><div class="launch-notes">ОБНОВЛЕНИЕ 1.4<br>Новая атмосфера · Чистая коллекция · Космический интерфейс</div></div></div><div class="app">
 <header class="top"><div class="brand">ETER<span>N</span>AL</div><div class="wallets"><button class="install-app" id="installApp" hidden>Установить</button><div class="wallet gold">◈ <b id="goldTop">120</b></div><div class="wallet gem">✦ <b id="gems">250</b></div><div class="wallet" style="color:#9beaff">✧ <b id="essenceTop">0</b></div></div></header>
 <section class="hero"><div class="eyebrow">✦ COSMIC AWAKENING · STARBOUND SEASON 1.2</div><h1>Покори<br>звёздные миры.</h1><p>Собирай космических героев, открывай созвездия и сражайся с владыками галактик.</p><div class="stats"><div class="stat">Уровень аккаунта: <b id="accountLevel">1</b></div><div class="stat">Существ: <b id="count">0</b></div><div class="stat">Этап: <b id="stageStat">1</b></div><div class="stat">Побед: <b id="wins">0</b></div></div><div class="hero-mascot" id="heroMascot" aria-hidden="true"></div></section>
 <nav class="tabs"><button class="tab active" data-tab="summon">Призыв</button><button class="tab" data-tab="collection">Герои</button><button class="tab" data-tab="battle">Бой</button><button class="tab" data-tab="evolution">Эво</button><button class="tab" data-tab="quests">Задания</button><button class="tab" data-tab="constellations">Звёзды</button><button class="tab" data-tab="progress">Рост</button><button class="tab" data-tab="events">События</button></nav>
@@ -152,31 +181,25 @@ button{touch-action:manipulation;}
 <section id="constellations" class="view hidden"><div class="panel"><h2>Атлас созвездий</h2><p class="sub">Вкладывай звёздную эссенцию, чтобы навсегда усиливать всю команду.</p><div class="cosmic-note">✧ Звёздная эссенция: <b id="essenceCount">0</b> · Добывается за победы над боссами на каждом 50-м этапе.</div><div class="constellation-grid" id="constellationGrid"></div></div></section>
 <section id="progress" class="view hidden"><div class="panel"><h2>Достижения</h2><p class="sub">Награды за развитие коллекции и прохождение этапов.</p><div class="grid" id="achievements"></div><div class="notice">Опыт аккаунта начисляется за призывы и победы. Уровень существ растёт отдельно.</div></div></section>
 <section id="events" class="view hidden"><div class="panel"><h2>События мира</h2><p class="sub">Раздел подготовлен под будущие обновления.</p><div class="card"><div class="art">🌠</div><strong>Эхо звёзд · сезон I</strong><div class="rarity">ПЛАН РАЗВИТИЯ МИРА</div><p class="muted">Следующие игровые направления: экспедиции с выбором награды, испытания стихий, коллекционные титулы и новые боссы. Это план, а не уже открытые режимы.</p></div><div class="notice">Игра работает автономно в браузере. Онлайн-функции, аккаунты, рейтинги и синхронизация между устройствами пока не подключены.</div></div></section>
-</main><div class="footer">ETERNAL · COSMIC AWAKENING 1.2 · STARBOUND</div></div>
+</main><div class="footer">ETERNAL · COLLECTOR UNIVERSE 1.4 · STARBOUND</div></div>
 <script>
 'use strict';
 const SAVE_KEY='eternal_save';
 const roster=[
-// Legacy heroes: retained so existing collections and saves remain compatible.
-{name:'Люмен',art:'🦊',rarity:'Обычный',weight:42.24,power:12,hp:100,role:'Разведчик',element:'Свет',skills:['Искристый выпад','Лисья ловкость','Зов спутника'],heroId:'legacy-lumen'},
-{name:'Каменный страж',art:'🗿',rarity:'Обычный',weight:24.64,power:16,hp:140,role:'Защитник',element:'Земля',skills:['Каменный кулак','Стойка бастиона','Земляной заслон'],heroId:'legacy-stone'},
-{name:'Искра',art:'🐉',rarity:'Редкий',weight:13.2,power:35,hp:115,role:'Боец',element:'Огонь',skills:['Огненный укус','Пламенный рывок','Искровой взрыв'],heroId:'legacy-spark'},
-{name:'Лунный феникс',art:'🦅',rarity:'Эпический',weight:5.28,power:90,hp:180,role:'Боец',element:'Луна',skills:['Лунное перо','Возрождение','Сияющий вихрь'],heroId:'legacy-phoenix'},
-{name:'Астрал',art:'🦄',rarity:'Легендарный',weight:2.2,power:240,hp:260,role:'Маг',element:'Звёзды',skills:['Звёздная стрела','Космический щит','Падение кометы'],heroId:'legacy-astral'},
-{name:'Нулевой',art:'👾',rarity:'Мифический',weight:.44,power:900,hp:500,role:'Гибрид',element:'Пустота',skills:['Нулевая волна','Разлом реальности','Абсолютный сброс'],heroId:'legacy-zero'},
 // Bright Awakening heroes: six original semi-3D styled characters.
 {name:'Ариэль',art:'🪽',rarity:'SSR · Свет',weight:2,power:360,hp:650,role:'Ангел / танк и поддержка',element:'Свет',heroId:'ariel',artFile:'assets/heroes/ariel.webp',skills:['Поглощение урона','Щит союзникам','Контратака'],evolution:['Небесный страж','Валькирия света','Архангел рассвета','Вечная хранительница']},
-{name:'Моргана',art:'🔮',rarity:'SSR · Тьма',weight:2.2,power:410,hp:380,role:'Маг / контроль',element:'Тень',heroId:'morgana',artFile:'assets/heroes/morgana.webp',skills:['Теневая магия','Проклятие','Взрыв тьмы'],evolution:['Ученица чар','Ведьма сумерек','Архимаг хаоса','Королева астрала']},
-{name:'Эльвира',art:'🏹',rarity:'SR · Лес',weight:1.8,power:350,hp:330,role:'Лучница / атакующий',element:'Лес',heroId:'elvira',artFile:'assets/heroes/elvira.webp',skills:['Ледяная стрела','Лесной прыжок','Дождь стрел'],evolution:['Юная следопытка','Страж леса','Хранительница чащи','Легенда зелёного ветра']},
+{name:'Моргана',art:'🔮',rarity:'SSR · Тьма',weight:2.2,power:410,hp:380,role:'Маг / контроль',element:'Тень',heroId:'morgana',artFile:'assets/heroes/morgana.png',skills:['Теневая магия','Проклятие','Взрыв тьмы'],evolution:['Ученица чар','Ведьма сумерек','Архимаг хаоса','Королева астрала']},
+{name:'Эльвира',art:'🏹',rarity:'SR · Лес',weight:1.8,power:350,hp:330,role:'Лучница / атакующий',element:'Лес',heroId:'elvira',artFile:'assets/heroes/elvira.png',skills:['Ледяная стрела','Лесной прыжок','Дождь стрел'],evolution:['Юная следопытка','Страж леса','Хранительница чащи','Легенда зелёного ветра']},
 {name:'Дрейкос',art:'🐉',rarity:'UR · Пламя',weight:2,power:520,hp:590,role:'Дракон / воин',element:'Огонь',heroId:'draekos',artFile:'assets/heroes/draekos.webp',skills:['Огненный удар','Дыхание дракона','Рёв разрушения'],evolution:['Пепельный дракон','Пламенный крылатый','Древний дракон огня','Повелитель вулканов']},
 {name:'Кицунэ',art:'🦊',rarity:'SR · Дух',weight:2,power:280,hp:480,role:'Дух-лисица / поддержка',element:'Дух',heroId:'kitsune',artFile:'assets/heroes/kitsune.webp',skills:['Лечение','Благословение','Духовный покров'],evolution:['Юный дух-лис','Хранительница огня','Девятихвостая кицунэ','Легенда алого леса']},
 {name:'Нексус',art:'🛡️',rarity:'UR · Космос',weight:2,power:450,hp:760,role:'Голем / танк',element:'Космос',heroId:'nexus',artFile:'assets/heroes/nexus.webp',skills:['Космический барьер','Гравитационный удар','Звёздный взрыв'],evolution:['Осколок звезды','Страж орбиты','Космический голем','Пожиратель лун']}
 ];
 const enemyTypes=[{name:'Теневой слизень',art:'🟣',power:22,hp:90},{name:'Пещерный волк',art:'🐺',power:38,hp:145},{name:'Ржавый голем',art:'🗿',power:60,hp:240},{name:'Ночной дракон',art:'🐲',power:95,hp:360}];
 const $=id=>document.getElementById(id);
+$('launchPlay').addEventListener('click',()=>{$('launcher').classList.add('hidden');});
 const defaultState=()=>({version:4,gems:250,gold:120,essence:0,constellations:{attack:0,guard:0,fortune:0},pulls:0,creatures:[],xp:0,stage:1,wins:0,team:[],lastBattle:null,daily:null});
 function normalizeCreature(c,i){
- const base=roster.find(x=>x.name===c.name)||roster[0];
+ const base=roster.find(x=>x.name===c.name)||{name:c.name||'Неизвестный герой',art:c.art||'✦',rarity:c.rarity||'LEGACY',power:Number(c.power)||100,hp:Number(c.hp)||100,role:c.role||'Боец',element:c.element||'Стихия',heroId:c.heroId||'',skills:Array.isArray(c.skills)?c.skills:[],evolution:Array.isArray(c.evolution)?c.evolution:[],artFile:c.artFile||''};
  const level=Math.max(1,Math.floor(Number(c.level)||1));
  const rank=Math.max(0,Math.min(3,Math.floor(Number(c.rank)||0)));
  // Older saves sometimes retained level but lost upgraded power/HP. Keep valid stored stats;
@@ -189,7 +212,8 @@ function normalizeCreature(c,i){
  const hp=(!Number.isFinite(storedHp)||storedHp<=0||(level>1&&rank===0&&storedHp<=base.hp))?estimatedHp:Math.max(1,storedHp);
  return {...c,id:c.id??('legacy-'+i+'-'+Date.now()),name:String(c.name||base.name),art:String(c.art||base.art),rarity:String(c.rarity||base.rarity),power,hp,level,xp:Math.max(0,Number(c.xp)||0),rank,heroId:c.heroId||base.heroId||'',role:c.role||base.role||'Боец',element:c.element||base.element||'Стихия',skills:Array.isArray(c.skills)?c.skills:(base.skills||[]),evolution:Array.isArray(c.evolution)?c.evolution:(base.evolution||[]),artFile:c.artFile||base.artFile||''};
 }
-function loadState(){try{const raw=localStorage.getItem(SAVE_KEY);if(!raw)return defaultState();const old=JSON.parse(raw);if(!old||typeof old!=='object')return defaultState();const s={...defaultState(),...old};s.creatures=Array.isArray(old.creatures)?old.creatures.map(normalizeCreature):[];s.team=Array.isArray(old.team)?old.team.filter(id=>s.creatures.some(c=>String(c.id)===String(id))).slice(0,3):[];s.gems=Math.max(0,Number(s.gems)||0);s.gold=Math.max(0,Number(s.gold)||0);s.xp=Math.max(0,Number(s.xp)||0);s.pulls=Math.max(0,Number(s.pulls)||0);s.stage=Math.max(1,Math.floor(Number(s.stage)||1));s.wins=Math.max(0,Number(s.wins)||0);s.essence=Math.max(0,Number(s.essence)||0);s.constellations={attack:Math.max(0,Math.min(10,Number(s.constellations?.attack)||0)),guard:Math.max(0,Math.min(10,Number(s.constellations?.guard)||0)),fortune:Math.max(0,Math.min(10,Number(s.constellations?.fortune)||0))};s.version=5;s.daily=normalizeDaily(s.daily);return s;}catch(e){return defaultState();}}
+function loadState(){try{const raw=localStorage.getItem(SAVE_KEY);if(raw&&!localStorage.getItem(SAVE_KEY+'_pre_v6_backup'))localStorage.setItem(SAVE_KEY+'_pre_v6_backup',raw);if(!raw)return defaultState();const old=JSON.parse(raw);if(!old||typeof old!=='object')return defaultState();const s={...defaultState(),...old};s.creatures=Array.isArray(old.creatures)?old.creatures.map(normalizeCreature):[]; // Preserve every legacy hero; never whitelist-filter a player's collection.
+s.team=Array.isArray(old.team)?old.team.filter(id=>s.creatures.some(c=>String(c.id)===String(id))).slice(0,3):[];s.gems=Math.max(0,Number(s.gems)||0);s.gold=Math.max(0,Number(s.gold)||0);s.xp=Math.max(0,Number(s.xp)||0);s.pulls=Math.max(0,Number(s.pulls)||0);s.stage=Math.max(1,Math.floor(Number(s.stage)||1));s.wins=Math.max(0,Number(s.wins)||0);s.essence=Math.max(0,Number(s.essence)||0);s.constellations={attack:Math.max(0,Math.min(10,Number(s.constellations?.attack)||0)),guard:Math.max(0,Math.min(10,Number(s.constellations?.guard)||0)),fortune:Math.max(0,Math.min(10,Number(s.constellations?.fortune)||0))};s.version=6;s.daily=normalizeDaily(s.daily);return s;}catch(e){return defaultState();}}
 let state=loadState();
 function localDayKey(){const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
 function normalizeDaily(d){const today=localDayKey();if(!d||d.date!==today)return {date:today,progress:{summons:0,wins:0,upgrades:0,skipped:0},claimed:[]};return {date:today,progress:{summons:Math.max(0,Number(d.progress?.summons)||0),wins:Math.max(0,Number(d.progress?.wins)||0),upgrades:Math.max(0,Number(d.progress?.upgrades)||0),skipped:Math.max(0,Number(d.progress?.skipped)||0)},claimed:Array.isArray(d.claimed)?d.claimed:[]};}
@@ -258,7 +282,7 @@ function upgradeConstellation(id){const d=constellationDefs.find(x=>x.id===id);i
 function renderAchievements(){const a=[['🏅','Первый призыв',state.pulls>=1],['🧭','Коллекционер',state.creatures.length>=5],['💎','Большая коллекция',state.creatures.length>=10],['⚔️','Первая победа',state.wins>=1],['🏰','Покоритель',state.stage>=6],['🐉','Охотник на владык',state.essence>=1]];$('achievements').innerHTML=a.map(x=>`<div class="card"><div class="art">${x[0]}</div><strong>${x[1]}</strong><div class="rarity" style="color:${x[2]?'var(--green)':'var(--muted)'}">${x[2]?'ПОЛУЧЕНО':'ЗАБЛОКИРОВАНО'}</div></div>`).join('');}
 function creatureArt(c){
  const data=roster.find(x=>x.name===c.name)||{};
- if(data.artFile){const safe=data.artFile.replace(/[^a-zA-Z0-9_./-]/g,'');return `<img class="hero-illustration" src="${safe}" alt="${esc(c.name)}" loading="lazy" onerror="this.style.display='none'">`;}
+ if(data.artFile){const safe=data.artFile.replace(/[^a-zA-Z0-9_./-]/g,'');return `<img class="hero-illustration hero-sprite-fallback" data-hero-id="${esc(c.heroId||data.heroId||'legacy')}" src="${safe}" alt="${esc(c.name)}" loading="lazy" onerror="this.style.display='none'">`;}
  const idx=Math.max(0,roster.findIndex(x=>x.name===c.name));
  const palettes=[['#f6bd70','#a64f37','#ffe5a4'],['#b8c8d5','#586f89','#dff3ff'],['#79e0d2','#267f86','#d5fff3'],['#ff9d72','#a53e53','#ffe0a0'],['#d7a6ff','#644b9d','#f5ddff'],['#9ba8ff','#303d83','#dce5ff']];
  const [a,b,light]=palettes[idx%palettes.length];const uid='hero'+String(c.id).replace(/[^a-zA-Z0-9]/g,'').slice(-12);const rank=c.rank||0;
